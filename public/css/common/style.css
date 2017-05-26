@@ -1,0 +1,20 @@
+* {
+    -moz-text-size-adjust: none;
+    font-family: "微软雅黑";
+    word-break: break-all;
+}
+
+body {
+    color: #3c3c3c;
+    font-size: 12px;
+}
+
+.head {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border-bottom: 2px solid #f4f4f4;
+    height: 31px;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}

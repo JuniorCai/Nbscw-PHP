@@ -24,7 +24,7 @@ class CreateLoginLogs extends Migration
                 $table->string('loginIp');
                 $table->dateTime('loginDate');
                 $table->string('loginAgent');
-                $table->integer('isDelete')->default(0);
+                $table->softDeletes();
                 $table->dateTime('created_at');
                 $table->dateTime('updated_at');
             });

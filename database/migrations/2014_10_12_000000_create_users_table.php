@@ -31,10 +31,11 @@ class CreateUsersTable extends Migration
                 $table->integer('areaId');
                 $table->string('ip');
                 $table->integer('isAuth');
+                $table->integer('isAdmin');
                 $table->integer('authMobile');
                 $table->string('remark')->default('');
                 $table->integer('authEmail');
-                $table->integer('isDelete')->default(0);
+                $table->softDeletes();
                 $table->rememberToken();
                 $table->dateTime('created_at');
                 $table->dateTime('updated_at');

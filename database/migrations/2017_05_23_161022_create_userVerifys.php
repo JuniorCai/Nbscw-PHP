@@ -23,7 +23,7 @@ class CreateUserVerifys extends Migration
                 $table->string('mobile');
                 $table->string('email');
                 $table->integer('status');
-                $table->integer('isDelete');
+                $table->softDeletes();
                 $table->dateTime('created_at');
                 $table->dateTime('updated_at');
             });
