@@ -12,7 +12,7 @@ use Closure;
 class RedirectUserLogin
 {
     /**
-     * 用于登录页检查用户是否已登录
+     * 用于登录页检查用户是否已登录,已登录则跳转至首页
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
@@ -26,7 +26,7 @@ class RedirectUserLogin
 //            return redirect('/admin');
 //        }
 
-        if(auth()->guard('user')->check())
+        if(auth()->guard('web')->check())
         {
             return redirect('/');
         }

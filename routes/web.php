@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware' => ['web']], function () {
+    Route::get('/login','auth\LoginController@showLoginForm');
+    Route::post('/login','auth\LoginController@login');
+    Route::get('/logout','auth\LoginController@logout');
+
+    Route::get('/register','auth\RegisterController@showRegistrationForm');
+    Route::post('/register','auth\LoginController@register');
+
+
+});

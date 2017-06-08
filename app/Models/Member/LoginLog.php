@@ -9,5 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class LoginLog extends Model
 {
     use SoftDeletes;
+
+    protected $table = "loginLogs";
     //
 }

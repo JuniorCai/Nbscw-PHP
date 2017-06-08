@@ -7,11 +7,12 @@
  */
 namespace App\Code\IService;
 use App\Models\Member\LoginLog;
-use App\Models\Member\User;
 
 interface ILoginLogService
 {
     function CreateLog(LoginLog $logModel);
+
+
 
 
 

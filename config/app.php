@@ -180,7 +180,13 @@ return [
         /*
          * Laravel IDE Helper
          */
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+
+        /*
+         * 依赖反转
+         */
+        App\Providers\InterfaceInjectProvider::class
+
 
     ],
 
