@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use App\Code\Common\FromAdminOperate;
+use App\Code\Common\LoginAgent;
+use App\Code\Common\LoginTypeEnum;
+use App\Code\IService\ILoginLogService;
+use App\Code\IService\IUserService;
+use App\Events\LoginLogEvent;
+use App\Http\Controllers\WebController;
+use App\Models\Member\User;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-class RegisterController extends Controller
+class RegisterController extends WebController
 {
     /*
     |--------------------------------------------------------------------------
@@ -27,16 +35,40 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
+    protected $UserService;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(IUserService $userService)
     {
-        $this->middleware('guest');
+        $this->middleware('redirectLogin', ['except' => 'logout']);
+        $this->UserService = $userService;
+    }
+
+
+    /**
+     * 用户注册，登录后记录日志
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        $user = $this->create($request->all());
+
+        $this->guard()->login($user);
+
+        event(new LoginLogEvent($user,$request->ip(),LoginTypeEnum::UserName
+            ,LoginAgent::PC,FromAdminOperate::FromUser,Carbon::now()));
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
     }
 
     /**

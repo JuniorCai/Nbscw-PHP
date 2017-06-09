@@ -7,37 +7,26 @@
  */
 namespace App\Http\Controllers;
 
-use App\Code\IService\ILoginLogService;
-use App\Models\Member\LoginLog;
+use App\Events\LoginLogEvent;
+use App\Models\Member\User;
 use Carbon\Carbon;
 
 class WebController extends Controller
 {
-    protected $LogService;
 
-    public function __construct(ILoginLogService $logService)
-    {
-        $this->LogService = $logService;
-    }
 
     function GetLoginUserInfo()
     {
         return auth()->user();
     }
 
-    function RecordLoginLog($loginType,$loginAgent,$isFromAdmin,$ip)
+    function TriggerLoginLog($loginType,$loginAgent,$isFromAdmin,$ip)
     {
-        $userInfo = $this->GetLoginUserInfo();
-        $logModel = new LoginLog();
-        $logModel->userId = $userInfo->id;
-        $logModel->typeId = $loginType;
-        $logModel->loginIp = $ip;
-        $logModel->loginDate = Carbon::now();
-        $logModel->loginAgent = $loginAgent;
-        $logModel->admin = $isFromAdmin;
-        $logModel->accountNo = $userInfo->mobile;
+        $userInfo = new User();
 
+        $userInfo->id = $this->GetLoginUserInfo()->id;
+        $userInfo->mobile = $this->GetLoginUserInfo()->mobile;
+        event(new LoginLogEvent($userInfo,$ip,$loginType,$loginAgent,$isFromAdmin,Carbon::now()));
 
-        $this->LogService->CreateLog($logModel);
     }
 }

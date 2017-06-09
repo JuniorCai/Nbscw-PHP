@@ -43,7 +43,6 @@ class LoginController extends WebController
         $this->middleware('redirectLogin', ['except' => 'logout']);
 //        $v = bcrypt("123456");
        // $t=$v;
-        parent::__construct($logService);
 
     }
 
@@ -68,7 +67,7 @@ class LoginController extends WebController
 
         if ($this->attemptLogin($request)) {
             //登录成功，进行登录日志记录
-            $this->RecordLoginLog(LoginTypeEnum::Mobile,LoginAgent::PC,FromAdminOperate::FromUser,$request->ip());
+            $this->TriggerLoginLog(LoginTypeEnum::Mobile,LoginAgent::PC,FromAdminOperate::FromUser,$request->ip());
 
 
             //返回响应

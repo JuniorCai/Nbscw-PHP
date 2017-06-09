@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,11 +7,13 @@
     <script type="text/javascript" src="../../../js/jquery.js"></script>
     <script type="text/javascript" src="../../../js/bootstrap.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="../../../fonts/font-awesome-4.6.3/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../../../css/common.css">
     <link rel="stylesheet" type="text/css" href="../../../css/publicCommon.css">
-    <link rel="stylesheet" type="text/css" href="../../../css/userOperateCss/baseLogin.css">
+    @yield("pageCss")
+
 
 </head>
 <body>
@@ -18,9 +21,9 @@
 @include('layouts.auth.header')
 
 {{--content--}}
-<div class="containerCenter clearfix">
+
 @yield("bodyContent")
-</div>
+
 
 {{--footer--}}
 <script type="text/javascript" src="../../../../js/jquery-validation/js/jquery.validate.js"></script>
