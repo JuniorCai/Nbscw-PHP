@@ -1,0 +1,85 @@
+.backContainer{
+    background: #f2f2f2 none repeat scroll 0 0;
+}
+
+.containerCenter{
+    overflow: hidden;
+    width: 980px;
+}
+
+
+.infoContainer{
+    margin: 5px;
+    padding: 30px 10px;
+    background: #ffffff none repeat scroll 0 0;
+}
+
+.registerForm{
+    float: left;
+    width: 630px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-right:solid 1px #e6e6e6;
+}
+
+
+.registeHelper{
+    float: right;
+    width: 320px;
+    height: 100%;
+    padding-left: 20px;
+    background: #ffffff none repeat scroll 0 0;
+}
+
+.changeCode{
+    line-height: 34px;
+}
+
+.form-group .checkbox a{
+    color: #ff7800;
+    outline:none;
+}
+
+.registeHelper p{
+    padding: 5px 0;
+}
+.registeHelper p:first-child{
+    border-bottom: dashed 1px #e6e6e6;
+}
+
+.registeHelper p >span{
+    color: #a9a9a9;
+}
+
+.registeHelper p a{
+    color:#0063dc;
+}
+
+
+.registeHelper .thirdLogin{
+    padding: 20px 0;
+    border-bottom: solid 1px #e6e6e6;
+}
+
+.registeHelper .thirdLogin li{
+    float: left;
+    margin-right: 10px;
+}
+
+.registeHelper .thirdLogin img{
+    width: 128px;
+    height: 38px;
+}
+
+.registeHelper .memberServices{
+    list-style: square inside url("../../images/duigou.png");
+}
+
+.registeHelper .memberServices li{
+    margin: 10px 0;
+}
+
+.inputTip{
+    color:gray;
+}
+

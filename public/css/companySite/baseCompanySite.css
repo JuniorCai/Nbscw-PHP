@@ -1,0 +1,606 @@
+.containerCenter > p{
+    margin: 20px 0 ;
+}
+
+/*搜索栏层*/
+.c-searchContainer{
+    height: 70px;
+}
+
+.c-rightSearch{
+    float: right;
+    margin: 10px 60px 30px 50px;
+    height: 40px;
+    width: 460px;
+    padding: 5px 0 5px 5px;
+    background-color: #F3B827;
+    position: relative;
+}
+
+.c-rightSearch .searchSelect {
+    float: left;
+    line-height:30px;
+}
+
+.c-selectBox{
+    height:30px;
+    width:86px;
+    background:  url("../../images/selectBox.png") no-repeat center;
+    border-right:1px solid #f0f0f0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.c-rightSearch .keyInput{
+    width:278px;
+    height: 30px;
+    border: medium none;
+    padding-left: 5px;
+}
+
+.c-rightSearch .searchBtn{
+    height: 40px;
+    width:90px;
+    border:medium none;
+    font-size: 16px;
+    font-weight: 700;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #ffffff;
+    background-color: #F3B827;
+}
+
+.c-rightSearch .searchBtn:hover{
+    background-color: #FFA600;
+}
+
+/*搜索栏层End*/
+
+/*左侧企业信息*/
+.leftLogo a{
+    float: left;
+}
+.leftLogo .c-contactInfo{
+    margin-left: 10px;
+    float: left;
+}
+
+.c-contactInfo p{
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #6c6c6c;
+}
+
+.c-contactInfo p > span{
+    min-width: 60px;
+}
+
+.c-contactInfo p > b{
+    color: #3c3c3c;
+    margin-left: 5px;
+}
+
+/*左侧企业信息End*/
+
+/*搜索栏层End*/
+
+
+
+/*企业导航栏层*/
+.c-nav-layout{
+    background: #FF9900;
+    /*height: 44px;*/
+}
+
+.c-nav-layout .allCategory{
+    position: relative;
+}
+.c-nav-layout .allCategory  a{
+
+    float: left;
+    width:210px;
+    line-height: 44px;
+    text-align: center;
+    text-decoration:none;
+    background-color: #FFC000;
+    color: #ffffff;
+    font-size:16px;
+}
+
+.c-nav-layout .nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus,
+.nav-pills > li > a:hover
+{
+    background-color: #FFC000;
+
+}
+/*企业导航栏层End*/
+
+/*左侧企业栏目区*/
+.DetailContainer{
+    margin-top: 20px;
+}
+
+.leftSideBarContainer {
+    float: left;
+    width: 200px;
+    margin-right: 20px;
+}
+
+.barBlock{
+    border: solid 1px #e6e6e6;
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+.barBlock p{
+    font-size: 14px;
+    padding: 0 15px;
+}
+
+.barBlock label{
+    font-size: 14px;
+    font-weight: 400;
+    color: #6c6c6c;
+}
+
+.barBlock span{
+    padding-left: 5px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.blockTitle{
+    font-size: 16px;
+    padding: 0 15px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #F5F5F5;
+    border-bottom: solid 1px #e6e6e6;
+    margin-bottom: 20px;
+}
+
+
+
+.barBlock .blockGoShop{
+    display: block;
+    float: left;
+    background-color: #FFCC33;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 8px;
+    line-height: 30px;
+    outline: none;
+    text-decoration: none;
+}
+
+.barBlock .blockGoShop:hover{
+    background-color: #FFA600;
+    text-decoration: none;
+}
+
+.barBlock .blockCollectShop{
+    display: block;
+    float: left;
+    background-color: #0999FF;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    margin-top: 15px;
+    margin-right: 15px;
+    line-height: 30px;
+    outline: none;
+    text-decoration: none;
+}
+
+.barBlock .blockCollectShop:hover{
+    background-color: #3088D2;
+    text-decoration: none;
+}
+
+.quickSearch{
+    height: 50px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-bottom: solid 1px #e6e6e6;
+}
+
+.quickSearch .keyInput{
+    float: left;
+    border: medium none;
+    height: 30px;
+    padding-left: 5px;
+    width: 144px;
+}
+
+.quickSearchBtn{
+    float: left;
+    background: url('../../images/quickSearch.png') no-repeat 8px 8px;
+    background-color: #FF9900;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.friendLink{
+    list-style-image: url("../../images/friendLinkLogo.png");
+    list-style-position: inside;
+    padding-left: 10px;
+
+}
+
+.friendLink li{
+    line-height: 24px;
+}
+
+/*左侧企业栏目区End*/
+
+/*右侧内容块*/
+.rightDetailContainer {
+    float: left;
+    width: 980px;
+    /*border: solid 1px #e6e6e6;*/
+}
+
+.rightDetailContainer *{
+    word-break: break-all;
+}
+
+.c-introImg{
+    float: left;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+
+
+/*右侧内容块End*/
+
+
+/*店内推荐产品列表*/
+
+.c-pic {
+    padding: 0 36px;
+}
+
+.carousel-control{
+    width: 5%;
+    padding-top: 60px;
+    font-size: 70px;
+}
+
+
+.c-sellContainer img{
+    width: 200px;
+    height: 200px;
+}
+
+.c-sellContainer li{
+    float: left;
+    border: solid 1px #e6e6e6;
+    margin:0 12px;
+}
+
+.c-sellContainer > li > P{
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.c-sellContainer > li > .proName{
+    font-size:16px;
+    padding-left: 10px;
+    color: #2FB8FA;
+    margin: 5px 0;
+    display: block;
+}
+.c-sellContainer a:hover{
+    color: #ff7800;
+    text-decoration: none;
+}
+
+
+.c-newProducts ul{
+    margin-bottom: 20px;
+}
+
+.c-productUpdate{
+    float: left;
+    font-size: 12px;
+    color: #A9A9A9;
+}
+
+/*店内推荐产品列表End*/
+
+
+/*企业风采*/
+.w300h200{
+    width: 300px;
+    height: 200px;
+}
+
+.barBlock .row{
+    margin-bottom: 20px;
+}
+
+.barBlock .pagerContainer{
+    text-align: center;
+    float: none;
+}
+
+.barBlock .pagination{
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+/*企业风采End*/
+
+/*企业档案*/
+
+
+.barBlock .tableHonor{
+    width:100%;
+    margin: 0px 20px;
+}
+
+
+.barBlock .tableHonor td{
+    height: 40px;
+}
+
+.barBlock .tableHonor .th{
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+}
+
+.th4{
+    width: 4%;
+}
+
+.th10{
+    width: 10%;
+}
+
+.barBlock .tableHonor .tb{
+    font-weight: 400;
+    font-size: 14px;
+    width:30%;
+}
+
+/*企业档案End*/
+
+/*荣誉资质*/
+.barBlock .table{
+    margin-top: -20px;
+
+}
+
+.table > thead > tr > th{
+    font-size: 14px;
+    color: #a9a9a9;
+    text-align: center;
+    height: 40px;
+}
+
+.table > tbody > tr > td{
+    text-align: center;
+    width:20%;
+    vertical-align: middle;
+    border-top: none;
+    font-size: 14px;
+}
+
+.table > tbody > tr > td >img{
+    width: 170px;
+    height: 120px;
+}
+/*荣誉资质End*/
+
+/*企业招聘*/
+.detailTitle{
+    height: 120px;
+    padding: 40px 40px 10px 40px;
+}
+
+.detailTitle h3{
+    font-weight: bold;
+}
+
+.detailTitle p{
+    padding: 10px 0;
+    color: #6c6c6c;
+    border-bottom: solid 1px #e6e6e6;
+}
+
+.rightDetailContainer .infoContainer{
+    border: solid 1px #e6e6e6;
+}
+
+.detailInfo{
+    margin: 20px 0;
+}
+
+.tableRecruitment{
+    width:80%;
+    margin: 0px 40px;
+}
+
+
+.tableRecruitment td{
+    height: 40px;
+}
+
+.tableRecruitment .th{
+    font-weight: normal;
+    font-size: 14px;
+    text-align: left;
+    color: #6c6c6c;
+    width:3%;
+}
+
+.tableRecruitment .tb{
+    font-weight: 400;
+    font-size: 14px;
+    width:10%;
+}
+
+.detailDescribe{
+    margin:20px 0;
+}
+
+
+.detailDescribe p,.detailContact p{
+    margin: 0 40px;
+    padding: 10px 0;
+    line-height: 24px;
+
+}
+
+.detailDescribe p:first-child, .detailContact p{
+    font-size: 16px;
+    border-bottom: solid 1px #e6e6e6;
+    color: #6c6c6c;
+
+}
+/*企业招聘End*/
+
+
+/*企业产品*/
+
+.barBlock .resultsBlock{
+    margin:0 15px;
+    color: #6c6c6c;
+    padding: 0 0 10px 0;
+    border-bottom: solid 1px #e6e6e6;
+}
+
+.resultsBlock .resultsInfo{
+    color: #FFA600;
+    margin-left: 5px;
+    font-size: 12px;;
+}
+
+.c-filterContainer{
+    padding: 10px 15px;
+}
+
+
+.c-filterContainer dl {
+
+    float: left;
+    overflow: hidden;
+    position: relative;
+    top: -1px;
+    height: 40px;
+    width: 100%;
+}
+
+.c-filterContainer dl dd {
+    display: inline;
+    float: left;
+}
+
+.c-filterContainer dl dd a {
+    display: inline-block;
+    margin: 4px 10px 4px 0;
+    border:solid 1px #ffffff;
+    padding: 5px 15px;
+    line-height: 20px;
+    text-align: left;
+    text-decoration: none;
+}
+
+
+.c-filterContainer dl dd a:hover {
+    border:solid 1px #0999FF;
+    color: #0999FF;
+}
+
+.c-filterContainer dl dd li {
+    display: inline-block;
+    border:solid 1px #0999FF;
+    margin: 4px 10px 4px 0;
+    padding: 5px 15px;
+    line-height: 20px;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+.c-filterContainer .keyInput {
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 5px;
+    padding-left: 5px;
+    width: 278px;
+}
+
+.c-filterContainer .searchBtn{
+    background-color: #f3b827;
+    border: 1px solid #e6e6e6;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    height: 30px;
+    width: 90px;
+}
+
+.c-filterContainer .searchBtn:hover{
+    background-color: #FFA600;
+}
+
+.c-sortBoard{
+    width:100%;
+    height: 40px;
+    background: #F9F9F9 none repeat scroll 0 0;
+    border: 1px solid #e6e6e6;
+    margin-top: 20px;
+}
+
+.c-sortBoard a {
+    border-right: 1px solid #e6e6e6;
+    color: #333;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    width: 77px;
+}
+
+.c-sortBoard a:hover {
+    color: #0999FF;
+    text-decoration: none;
+}
+
+
+.productResultsList{
+    margin-top:10px;
+}
+
+.productResultsList .row img{
+    width: 100%;
+    height: 215px;
+}
+
+.proInfo > p > span > a:hover{
+    text-decoration: none;
+}
+/*企业产品End*/
+
+

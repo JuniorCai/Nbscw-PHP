@@ -1,0 +1,231 @@
+
+/*分类栏*/
+.searchArea{
+    position: relative;
+}
+
+.filterArea{
+    margin-top: 20px;
+    width: 1200px;
+}
+
+.filterContainer{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    width:940px;
+    border: solid 1px #e6e6e6;
+    float: left;
+}
+
+.filterContainer dl {
+    border-top: 1px dotted #e6e6e6;
+    float: left;
+    position: relative;
+    top: -1px;
+    line-height: 40px;
+    width: 100%;
+}
+
+.filterContainer dl dt {
+    border-right: 1px solid #e6e6e6;
+    background-color: #F9F9F9;
+    color: #999;
+    font-weight: bold;
+    height: 100%;
+    left: 0;
+    line-height: 40px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 77px;
+    z-index: 1;
+}
+
+.filterContainer dl dd {
+    display: inline;
+    float: left;
+    margin-left: 105px;
+}
+
+.filterContainer dl dd a {
+    display: inline-block;
+    margin: 4px 10px 4px 0;
+    border:solid 1px #ffffff;
+    padding: 5px 15px;
+    line-height: 20px;
+    text-align: left;
+    text-decoration: none;
+}
+
+
+.filterContainer dl dd a:hover {
+    border:solid 1px #0999FF;
+    color: #0999FF;
+}
+
+.filterContainer dl dd li {
+    display: inline-block;
+    border:solid 1px #0999FF;
+    margin: 4px 10px 4px 0;
+    padding: 5px 15px;
+    line-height: 20px;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.filterContainer .keyInput {
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 5px;
+    padding-left: 5px;
+    width: 278px;
+}
+
+.filterContainer .searchBtn{
+    background-color: #f3b827;
+    border: 1px solid #e6e6e6;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    height: 30px;
+    width: 90px;
+}
+
+.filterContainer .searchBtn:hover{
+    background-color: #FFA600;
+}
+
+
+.filterContainer .keyInput {
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 5px;
+    padding-left: 5px;
+    width: 278px;
+}
+
+.filterContainer .searchBtn{
+    background-color: #f3b827;
+    border: 1px solid #e6e6e6;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    height: 30px;
+    width: 90px;
+}
+
+.filterContainer .searchBtn:hover{
+    background-color: #FFA600;
+}
+
+/*分类栏 End*/
+
+
+/*求购列表信息*/
+.productResultsList{
+    margin-top:20px;
+}
+
+.productResultsList .row{
+    border:solid 1px #e6e6e6;
+    margin-bottom: 20px;
+}
+
+.row a:hover{
+    color: #ff7800;
+    text-decoration: none;
+}
+
+.productResultsList .row .purchaseInfo{
+    width:490px;
+    height: 220px;
+    margin: 20px;
+    border-right:dashed 1px #e6e6e6;
+    position: relative;
+    float: left;
+}
+
+.purchaseInfo .company-title{
+    font-size: 16px;
+    font-weight: bold;
+    color: #0999FF;
+    display: block;
+}
+
+.purchaseInfo ul{
+    margin-top: 20px;
+}
+
+.purchaseInfo ul li{
+    margin-bottom: 16px;
+}
+
+.purchaseInfo img{
+    position: absolute;
+    border: solid 1px #e6e6e6;
+    width:170px;
+    height: 120px;
+    top: 0px;
+    right: 30px;
+}
+
+.sellContainer{
+    float: left;
+    margin: 20px;
+}
+
+.sellContainer li{
+    float: left;
+    border: solid 1px #e6e6e6;
+    margin-left:10px;
+    margin-right: 20px;
+}
+
+.sellContainer li  img{
+    width:160px;
+    height: 160px;
+
+}
+
+.sellContainer > li > P{
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.sellContainer > li > .proName{
+    font-size:16px;
+    padding-left: 10px;
+    color: #2FB8FA;
+    margin: 5px 0;
+    display: block;
+}
+.sellContainer a:hover{
+    color: #ff7800;
+    text-decoration: none;
+}
+.sellContainer > li span{
+    color: #f3b827;
+    padding-left: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/*企业列表信息End*/
+
+/*右上角平台推广位*/
+.siteAd{
+    float: left;
+}
+
+.siteAd img{
+    margin-top: 20px;
+    width:240px;
+    height: 160px;
+}
+
+/*右上角平台推广位End*/
+

@@ -1,0 +1,70 @@
+.clearfix:after {
+    content:"\200B";
+    display:block;
+    height:0;
+    clear:both;
+}
+.clearfix {*zoom:1;}
+
+
+
+.btn-primary{
+    background-color: #0999ff;
+    border: none;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.btn-primary:hover{
+    background-color: #3088d2;
+}
+
+
+.lh20{
+    line-height: 20px;
+}
+.lh30{
+    line-height: 30px;
+}
+
+.f_s_14{
+    font-size: 14px;
+}
+
+.px12 {
+    font-size: 12px;
+}
+
+.f_b{
+    font-weight:bold;
+}
+
+.f_s_16{
+    font-size: 16px;
+}
+
+.f_r {
+    float: right;
+}
+.f_blue {
+    color: blue;
+}
+
+
+.f_red {
+    color: red;
+}
+
+.priceShow16{
+    color: #f3b827;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.priceShow14{
+    color: #f3b827;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 5px;
+}

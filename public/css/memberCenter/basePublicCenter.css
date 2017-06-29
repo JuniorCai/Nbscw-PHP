@@ -1,0 +1,367 @@
+/*顶部导航*/
+.centerNav > li.active {
+    background-color: #3088d2;
+}
+
+.centerNav > li:hover{
+    background-color: #3088d2;
+}
+
+.centerTitle{
+    float: left;
+    width: 180px;
+    height: 50px;
+}
+
+.navContainer{
+    background: #0999ff none repeat scroll 0 0;
+}
+
+.navItem{
+    border-right: 1px solid #2078c7;
+    color: #ffffff;
+    cursor: pointer;
+    float: left;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+}
+
+.navItem a,.navItem a:hover{
+    text-decoration: none;
+    color: #ffffff;
+
+}
+
+/*顶部导航End*/
+
+
+/*二级菜单栏*/
+.bodyContent{
+    position: relative;
+    padding: 0;
+}
+
+.navMenuContainer{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 179px;
+}
+
+.menuTitle{
+    background: rgba(0, 0, 0, 0) url("../../images/memberCenter/side_head.gif") no-repeat scroll 0 0;
+    height: 30px;
+    line-height: 30px;
+    width: 179px;
+    border-right: solid 1px #e6e6e6;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #3088d2;
+}
+
+.menuList li{
+    line-height: 36px;
+    padding-left: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.menuList li:hover{
+    background: #eeeeee none no-repeat scroll 0 0;
+}
+
+.menuList li > a{
+    float: right;
+    margin-right: 20px;
+    font-size: 12px;
+    color: #666;
+}
+.menuList li > a:hover{
+    color: #FFA600;
+    text-decoration: none;
+}
+/*二级菜单栏End*/
+
+
+/*内容块*/
+
+.contentContainer{
+    margin-left: 179px;
+    padding: 10px 10px 20px 10px;
+    height: 100%;
+    border-bottom: solid 1px #e6e6e6;
+    border-left: solid 1px #e6e6e6;
+}
+
+.memberPhoto{
+    width: 100px;
+    height: 100px;
+}
+
+.contentTitle{
+    font-size: 14px;
+    line-height: 30px;
+    margin: 10px;
+    border-bottom: solid 1px #e6e6e6;
+}
+
+.contentBody{
+    padding: 0 10px;
+}
+
+.contentBody table a{
+    color: #3088d2;
+}
+
+.contentBody > .quickOper{
+    padding-left: 50px;
+    margin: 20px 0;
+}
+
+.contentBody > .quickOper > li{
+    float: left;
+    width: 320px;
+}
+
+
+.contentBody > .quickOper > li > p{
+    padding-left: 90px;
+    padding-top: 10px;
+}
+
+.contentBody > .quickOper > li > img{
+    float: left;
+    width: 70px;
+    height: 70px;
+}
+
+.contentBody > .quickInfo > li{
+    background: rgba(0, 0, 0, 0) url("../../images/memberCenter/message_sys.gif") no-repeat scroll 0 5px;
+    line-height: 26px;
+}
+
+
+.contentBody > .quickInfo > li > span{
+    float: right;
+    color: #666;
+}
+.contentBody > .quickInfo > li > a{
+    margin-left: 20px;
+}
+
+/*内容页标签栏*/
+.menu {
+    border-bottom: 2px solid #3d95e5;
+    border-left: 1px solid #ededed;
+    height: 35px;
+    letter-spacing: 1px;
+    margin: 0 0 15px;
+    overflow: hidden;
+}
+.tab {
+    border-right: 1px solid #ededed;
+    border-top: 1px solid #ededed;
+}
+
+.tab_on {
+    background: #3d95e5 none repeat scroll 0 0;
+}
+.tab a:hover{
+    background: #eeeeee no-repeat scroll 0 0;
+}
+
+.tab a:link, .tab a:visited, .tab a:active {
+    color: #001c30;
+    display: block;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+.tab_on a:link, .tab_on a:visited, .tab_on a:active, .tab_on a:hover {
+    color: #ffffff;
+    display: block;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 15px;
+    text-decoration: none;
+}
+/*内容页标签栏End*/
+
+
+/*搜索栏*/
+.searchColumn{
+    margin: 20px 0;
+    padding:0 10px;
+}
+
+input[type=text]{
+    padding-left: 5px;
+    border: 1px solid #A9A9A9;
+    height: 22px;
+}
+
+.searchColumn input[type=text]{
+    margin:0 5px;
+}
+
+select{
+    border: 1px solid #A9A9A9;
+    height: 22px;
+}
+
+.contentContainer{
+    min-height: 600px;
+}
+
+.contentContainer .btn{
+    background: #f7f7f7 none repeat scroll 0 0;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    padding: 4px 10px 5px;
+}
+
+.contentContainer .btn:hover{
+    background: #e6e6e6 none repeat scroll 0 0;
+}
+
+.infoNav{
+    background: rgba(0, 0, 0, 0) url("../../images/memberCenter/nav_bg.gif") repeat-x scroll 0 bottom;
+    margin-bottom: 20px;
+}
+
+.infoNav td{
+    font-size: 14px;
+    padding: 10px 15px;
+}
+
+.infoNav a:hover{
+    text-decoration: none;
+}
+
+.infoNav .active{
+    border-bottom: 2px solid #3d95e5;
+}
+/*搜索栏End*/
+
+.tb {
+    background: #ffffff none repeat scroll 0 0;
+    border-top: 1px solid #e8e8e8;
+    width: 100%;
+}
+
+.tb tr {
+    line-height: 30px;
+}
+
+.tb th {
+    text-align: center;
+    background: #f5f5f5 none repeat scroll 0 0;
+    border-bottom: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+    height: 30px;
+    padding: 3px 6px;
+}
+
+.infoTable td {
+    border-bottom: 1px solid #f2f2f2;
+    height: 28px;
+}
+
+.btns {
+    border-bottom: 1px solid #f2f2f2;
+    height: 50px;
+    padding: 8px;
+}
+
+.limit {
+    background: #ffffcc none repeat scroll 0 0;
+    border: 1px solid #ff9900;
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+
+/*内容块End*/
+
+/*我的商友*/
+.friendsTable > table > tbody > tr > td{
+    border: solid 1px #e6e6e6;
+    padding: 5px;
+}
+
+.friendsTable a{
+    color: #3d95e5;
+}
+
+.friendsTable a:hover{
+    text-decoration: none;
+    color: #FFA600;
+}
+.tl {
+    background: #f7f7f7 none repeat scroll 0 0;
+    letter-spacing: 1px;
+    padding-right: 30px;
+    text-align: right;
+    width: 115px;
+}
+
+.tr{
+    padding-left: 5px;
+}
+
+.btn_b {
+    background: #3d95e6 none repeat scroll 0 0;
+    border: 1px solid #1e74d0;
+    border-radius: 3px;
+    color: #ffffff;
+    cursor: pointer;
+    letter-spacing: 1px;
+    padding: 4px 10px 5px;
+    height: 40px;
+}
+.btn_g {
+    background: #50c05a none repeat scroll 0 0;
+    border: 1px solid #74d47d;
+    border-radius: 3px;
+    color: #ffffff;
+    cursor: pointer;
+    letter-spacing: 1px;
+    padding: 4px 10px 5px;
+    height: 30px;
+    width: 60px;
+    line-height: normal;
+}
+/*我的商友End*/
+
+/*贸易提醒*/
+
+/*贸易提醒End*/
+
+
+/*积分管理*/
+.bd{
+    margin-top: 20px;
+}
+
+.bd td,.ls td {
+    border-bottom: 1px solid #f2f2f2;
+    border-left: 1px solid #f2f2f2;
+}
+
+.detailContent label{
+    font-weight:normal;
+}
+
+a.t {
+    color: #2078c7;
+    text-decoration: none;
+}
+/*积分管理End*/

@@ -1,0 +1,507 @@
+.containerCenter > p{
+    margin: 20px 0 ;
+}
+
+.InfoContainer{
+    border: solid 1px #e6e6e6;
+}
+
+.proPicsContainer{
+    float: left;
+    width: 320px;
+    height: 380px;
+    margin: 20px;
+}
+
+.baseInfoContainer{
+    float: left;
+    margin-top: 20px;
+    margin-right: 18px;
+    height: 380px;
+    width: 540px;
+    position: relative;
+}
+
+
+/*中间产品信息区*/
+.pro-title{
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.pro-remind{
+    font-size: 14px;
+    color: #f00000;
+}
+
+.price-panel{
+    padding-bottom: 10px;
+    height: 34px;
+    border-bottom: solid 1px #E9E9E9;
+}
+
+.pro-price{
+    font-size: 16px;
+    color: #ff4400;
+    padding-left: 5px;
+    font-weight: 400;
+}
+
+.pro-stock{
+    margin-left: 20px;
+    color: #6c6c6c;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+.contact-panel{
+    width:100%;
+    margin: 5px 0 10px 0px;
+    padding: 20px 5px 0 5px;
+    background-color: #FFFFCC;
+}
+
+
+.baseInfoContainer label{
+    font-size: 16px;
+    color: #6c6c6c;
+    font-weight: 400;
+
+}
+
+
+.contact-panel  li{
+    float: left;
+    width: 260px;
+    margin-bottom: 10px;
+}
+
+.contact-panel  li  span{
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+.pro-spec{
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.spec-name{
+    font-size: 14px;
+    font-weight: 400;
+    color: #6c6c6c;
+}
+
+.spec-value{
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 20px;
+}
+
+
+.baseInfoContainer .pro-collect{
+    display: block;
+    position: absolute;
+    background-color: #FFCC33;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    left: 0px;
+    bottom: 20px;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    text-decoration: none;
+}
+
+.baseInfoContainer .pro-collect:hover{
+    background-color: #FFA600;
+}
+
+
+.baseInfoContainer .pro-inquiry{
+    display: block;
+    position: absolute;
+    background-color: #FF3300;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    left: 180px;
+    bottom: 20px;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    text-decoration: none;
+}
+
+.baseInfoContainer .pro-inquiry:hover{
+    background-color: #FF0000;
+}
+
+
+/*右侧企业信息*/
+.companyInfoContainer{
+    float: left;
+    height: 420px;
+    width: 280px;
+    border-left: solid 1px #e6e6e6;
+    position: relative;
+}
+
+
+.containerTitle{
+    position: relative;
+    height: 50px;
+    border-bottom: solid 1px #e6e6e6;
+    background-color: #F5F5F5;
+
+}
+
+.containerTitle li{
+    font-size: 16px;
+    text-align: center;
+    width:100%;
+    line-height: 50px;
+    display: inline-block;
+}
+
+.containerTitle li:before{
+    display: block;
+    position: absolute;
+    left: 58px;
+    width: 40px;
+    top: 26px;
+    height: 1px;
+    content: "";
+    background-color: #333;
+}
+
+.containerTitle li:after{
+    display: block;
+    position: absolute;
+    right: 58px;
+    width: 40px;
+    top: 26px;
+    height: 1px;
+    content: "";
+    background-color: #333;
+}
+
+.companyContainer{
+    padding: 10px 0;
+    border-bottom: solid 1px #e6e6e6;
+}
+
+.companyContainer > li{
+    float: left;
+    margin-left: 15px;
+
+}
+
+.companyContainer > li:first-child{
+    float: left;
+    width: 160px;
+
+}
+
+.companyContainer > li > p{
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6C6C6C;
+}
+
+.companyContainer > li > p:first-child{
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+
+}
+
+
+.companyContainer > li > p > span{
+    color: #333;
+    padding-left: 5px;
+}
+
+
+.companyContainer > li .phoneNum{
+    color: #ff9900;
+}
+
+.companyContainer img{
+    border: solid 1px #e6e6e6;
+    width: 70px;
+    height: 70px;
+}
+
+.companyInfoContainer h5{
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.companyInfoContainer > p{
+    padding:0 15px;
+}
+
+.companyInfoContainer .goShop{
+    display: block;
+    position: absolute;
+    background-color: #FFCC33;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    left: 15px;
+    bottom: 20px;
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    text-decoration: none;
+}
+
+.companyInfoContainer .goShop:hover{
+    background-color: #FFA600;
+}
+
+
+.companyInfoContainer .collectShop{
+    display: block;
+    position: absolute;
+    background-color: #0999FF;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    right: 15px;
+    bottom: 20px;
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    text-decoration: none;
+}
+
+.companyInfoContainer .collectShop:hover{
+    background-color: #3088D2;
+}
+
+/*右侧企业信息End*/
+
+
+/*左侧企业栏目区*/
+.DetailContainer{
+    margin-top: 20px;
+}
+
+
+.leftSideBarContainer {
+    float: left;
+    width: 200px;
+    margin-right: 20px;
+}
+
+.barBlock{
+    border: solid 1px #e6e6e6;
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+.barBlock p{
+    font-size: 14px;
+    padding: 0 15px;
+}
+
+.barBlock label{
+    font-size: 14px;
+    font-weight: 400;
+    color: #6c6c6c;
+}
+
+.barBlock span{
+    padding-left: 5px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.blockTitle{
+    font-size: 16px;
+    padding: 0 15px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #F5F5F5;
+    border-bottom: solid 1px #e6e6e6;
+    margin-bottom: 20px;
+}
+
+
+
+.barBlock .blockGoShop{
+    display: block;
+    float: left;
+    background-color: #FFCC33;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 8px;
+    line-height: 30px;
+    outline: none;
+    text-decoration: none;
+}
+
+.barBlock .blockGoShop:hover{
+    background-color: #FFA600;
+    text-decoration: none;
+}
+
+.barBlock .blockCollectShop{
+    display: block;
+    float: left;
+    background-color: #0999FF;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    margin-top: 15px;
+    margin-right: 15px;
+    line-height: 30px;
+    outline: none;
+    text-decoration: none;
+}
+
+.barBlock .blockCollectShop:hover{
+    background-color: #3088D2;
+    text-decoration: none;
+}
+
+.quickSearch{
+    height: 50px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-bottom: solid 1px #e6e6e6;
+}
+
+.quickSearch .keyInput{
+    float: left;
+    border: medium none;
+    height: 30px;
+    padding-left: 5px;
+    width: 144px;
+}
+
+.quickSearchBtn{
+    float: left;
+    background: url('../images/quickSearch.png') no-repeat 8px 8px;
+    background-color: #FF9900;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.friendLink{
+    list-style-image: url("../images/friendLinkLogo.png");
+    list-style-position: inside;
+    padding-left: 10px;
+
+}
+
+.friendLink li{
+    line-height: 24px;
+}
+
+/*左侧企业栏目区End*/
+
+
+/*右侧产品详情区*/
+
+.rightDetailContainer {
+    float: left;
+    width: 980px;
+    /*border: solid 1px #e6e6e6;*/
+}
+
+.rightDetailContainer > .nav-tabs > li > a{
+    outline: none;
+    font-size: 14px;
+    border-radius:0;
+}
+
+.rightDetailContainer > .nav-tabs >  li.active{
+    /*border-top: 2px solid #FF7800;*/
+}
+
+.rightDetailContainer > .nav-tabs >  li.active a{
+    color: #FF7800;
+    /*border-color: #FF7800 #e6e6e6 transparent;*/
+    border-top: solid #ff7800 2px;
+    border-left: solid #e6e6e6 1px;
+    border-right: solid #e6e6e6 1px;
+}
+
+
+.rightDetailContainer > .nav-tabs{
+    margin-bottom: 20px;
+}
+
+.tab-content .tab-pane {
+    border: solid 1px #e6e6e6;
+}
+
+.tab-content .tab-pane .detailContent{
+    margin:auto;
+    width: 800px;
+    min-height: 300px;
+}
+
+
+.rightDetailContainer .productResultsList{
+    margin-top: 20px;
+}
+
+.productResultsList > p{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #e6e6e6;
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/*右侧产品详情区 End*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
