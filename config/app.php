@@ -185,7 +185,12 @@ return [
         /*
          * 依赖反转
          */
-        App\Providers\InterfaceInjectProvider::class
+        App\Providers\InterfaceInjectProvider::class,
+
+        /**
+         * 图片验证码
+         */
+        Mews\Captcha\CaptchaServiceProvider::class
 
 
     ],
@@ -237,6 +242,15 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /**
+         * 图片验证码
+         */
+        'Captcha' => Mews\Captcha\Facades\Captcha::class
+    ],
+
+    //发送短信验证开关
+    'SendSmsSwitch' => [
+        'State' => 'OFF'
     ],
 
 ];

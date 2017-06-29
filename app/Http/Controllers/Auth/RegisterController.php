@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Code\Common\FromAdminOperate;
-use App\Code\Common\LoginAgent;
-use App\Code\Common\LoginTypeEnum;
-use App\Code\IService\ILoginLogService;
+use App\Code\Common\FromAdminOperateEnum;
+use App\Code\Common\LoginAgentEnum;
+use App\Code\Common\LoginModeEnum;
+use App\Code\Common\SmsManagement;
 use App\Code\IService\IUserService;
+use App\Code\IService\IVerifyCodeService;
 use App\Events\LoginLogEvent;
 use App\Http\Controllers\WebController;
 use App\Models\Member\User;
+use App\Models\Member\UserGroupEnum;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -37,16 +39,18 @@ class RegisterController extends WebController
      */
     protected $redirectTo = '/';
     protected $UserService;
+    protected $VerifyCodeService;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(IUserService $userService)
+    public function __construct(IUserService $userService,IVerifyCodeService $verifyCodeService)
     {
         $this->middleware('redirectLogin', ['except' => 'logout']);
         $this->UserService = $userService;
+        $this->VerifyCodeService = $verifyCodeService;
     }
 
 
@@ -60,12 +64,21 @@ class RegisterController extends WebController
     {
         $this->validator($request->all())->validate();
 
-        $user = $this->create($request->all());
+        //验证验证码
+        $mobile = $request->input("mobile");
+        $mobileCode = $request->input("mobileCode");
+        $smsManagement = new SmsManagement($this->VerifyCodeService,$mobile,$request->ip());
+        if(!$smsManagement->AuthMobileCode($mobileCode))
+        {
+            return redirect('register')->withInput($request->except('password'))->withErrors(["mobileCodeError"=>"短信验证码错误"]);
+        }
+
+        $user = $this->create($request);
 
         $this->guard()->login($user);
 
-        event(new LoginLogEvent($user,$request->ip(),LoginTypeEnum::UserName
-            ,LoginAgent::PC,FromAdminOperate::FromUser,Carbon::now()));
+        event(new LoginLogEvent($user,$request->ip(),LoginModeEnum::Mobile
+            ,LoginAgentEnum::PC,FromAdminOperateEnum::FromUser,Carbon::now()));
 
         return $this->registered($request, $user)
             ?: redirect($this->redirectPath());
@@ -80,9 +93,12 @@ class RegisterController extends WebController
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'accountName' => 'required|max:255',
+            'mobile' => 'required|max:11',
+            'password' => 'required|min:6',
+            'userName' => 'required',
+            'gender' => 'required',
+            'mobileCode' => 'required',
         ]);
     }
 
@@ -92,12 +108,37 @@ class RegisterController extends WebController
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        $data = $request->all();
+
+        $userModel = new User();
+        $userModel->accountName = $data['accountName'];
+        $userModel->nickName = $data['accountName'];
+        $userModel->mobile = $data['mobile'];
+        $userModel->password = bcrypt($data['password']);
+        $userModel->payPassword = bcrypt($data['password']);
+        $userModel->userName = $data['userName'];
+        $userModel->gender = $data['gender'];
+        $userModel->userGroup = UserGroupEnum::MemberUser;
+        $userModel->ip = $request->ip();
+        $userModel->isAuth = false;
+        $userModel->authMobile = true;
+        $userModel->authEmail = false;
+        $userModel->isAdmin = false;
+        $userModel->email = "";
+        $userModel->avatar = "";
+        $userModel->qq = "";
+        $userModel->areaId = 0000;
+        $userModel->remark = "";
+        $userModel->remember_token = "";
+
+        return $this->UserService->CreateUser($userModel);
+
+//        return User::create([
+//            'name' => $data['name'],
+//            'email' => $data['email'],
+//            'password' => bcrypt($data['password']),
+//        ]);
     }
 }

@@ -43,11 +43,12 @@
             </div>
             <div class="form-group">
                 <div class="checkbox">
-                    <a href="register.html" style="color: #ff7800">立即注册</a>
+                    <a href="{{route('RegisterUser')}}" style="color: #ff7800">立即注册</a>
                 </div>
             </div>
         </form>
     </div>
+</div>
 
 @endsection
 

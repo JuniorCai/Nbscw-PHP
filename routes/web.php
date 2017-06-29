@@ -11,17 +11,27 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::group(['middleware' => ['web']], function () {
+    Route::get("/","common\IndexController@index");
+
+
     Route::get('/login','auth\LoginController@showLoginForm');
     Route::post('/login','auth\LoginController@login');
     Route::get('/logout','auth\LoginController@logout');
 
-    Route::get('/register','auth\RegisterController@showRegistrationForm');
-    Route::post('/register','auth\LoginController@register');
+    Route::get('/register','auth\RegisterController@showRegistrationForm')->name("RegisterUser");
+    Route::post('/register','auth\RegisterController@register');
+
+    Route::post('/sendCode','auth\VerifyController@sendMobileCode');
+    Route::post('/sendCode','auth\VerifyController@sendMobileCode');
+    Route::get('/getCaptcha/{tmp}','auth\VerifyController@getCaptcha');
+
+
+    Route::post('/verify/checkCaptcha','auth\VerifyController@checkCaptcha');
+    Route::post('/verify/checkAccountExist','auth\VerifyController@checkAccountExist');
+    Route::post('/verify/checkMobileExist','auth\VerifyController@checkMobileExist');
 
 
 });

@@ -16,6 +16,10 @@ use App\Models\Member\verifyCodeStatusEnum;
 use App\Models\Member\verifyType;
 use Carbon\Carbon;
 
+/**
+ * 短信发送管理类
+ * @package App\Code\Common
+ */
 class SmsManagement
 {
     protected $VerifyCodeService;
@@ -124,11 +128,12 @@ class SmsManagement
      */
     function SendMobileCode()
     {
+        $this->ClearMobilePreVerify();
         //如果短信关闭，则直接返回true
-        if($this->State==smsSwitchState::OFF)
-        {
-            return true;
-        }
+//        if($this->State==smsSwitchState::OFF)
+//        {
+//            return true;
+//        }
 
         //检查发送次数是否超出
         if(!$this->CheckIpSendOutNumber()&&!$this->CheckMobileSendOutNumber())
@@ -173,6 +178,22 @@ class SmsManagement
     }
 
     /**
+     * 将与手机号码关联的未使用的验证码信息置为无效
+     */
+    protected function ClearMobilePreVerify()
+    {
+        $filterArray = [];
+        $updateArray = [];
+
+        array_push($filterArray,["mobile","=",$this->Mobile]);
+        array_push($filterArray,["status","=",verifyCodeStatusEnum::Pending]);
+
+        $updateArray = array_add($updateArray,"status",verifyCodeStatusEnum::Invalid);
+
+        $this->VerifyCodeService->ToggleVerifyStatusByMobile($filterArray,$updateArray);
+    }
+
+    /**
      * 保存验证码短信
      * @return 返回保存成功的验证码对象，不成功返回null
      */
@@ -184,7 +205,7 @@ class SmsManagement
         $verifyModel->email =$this->Email;
         $verifyModel->verifyCode = $this->Code;
         $verifyModel->ip = $this->Ip;
-        $verifyModel->status = verifyCodeStatusEnum::Pendding;
+        $verifyModel->status = verifyCodeStatusEnum::Pending;
 
         return $this->VerifyCodeService->CreateVerifyCode($verifyModel);
     }
@@ -233,8 +254,12 @@ class SmsManagement
     {
         $expirationTime = Carbon::now()->subMinutes(30);
         $existCode = $this->VerifyCodeService->CheckMobileVerifyCode($this->Mobile,$receivedCode,$expirationTime);
-        if($existCode)
+        if($existCode!=null)
         {
+            //置验证码状态
+            $existCode->status = verifyCodeStatusEnum::Invalid;
+            $this->VerifyCodeService->SaveVerify($existCode);
+
             return true;
         }
         return false;

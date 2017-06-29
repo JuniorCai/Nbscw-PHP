@@ -31,3 +31,16 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 }
+
+/**
+ * 会员组类别
+ * @package App\Models\Member
+ */
+class UserGroupEnum
+{
+    const Guest = 0;
+    const MemberUser = 1;
+    const UnauthCompany = 2;
+    const AuthCompany = 3;
+    const VIP = 4;
+}

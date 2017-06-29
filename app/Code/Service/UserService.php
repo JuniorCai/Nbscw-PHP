@@ -59,4 +59,14 @@ class UserService implements IUserService
         return $this->Repository->CreateUser($userModel);
     }
 
+    function GetUserByAccountName($account)
+    {
+        return $this->Repository->GetUserByAccountName($account);
+    }
+
+    function GetUserByMobile($mobile)
+    {
+        return $this->Repository->GetUserByMobile($mobile);
+    }
+
 }

@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.9 on 2017-05-23.
+ * Generated for Laravel 5.4.9 on 2017-06-27.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -1547,7 +1547,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the currently authenticated user.
          *
-         * @return \App\User|null 
+         * @return \App\Models\Member\User|null 
          * @static 
          */
         public static function user()
@@ -1582,7 +1582,7 @@ namespace Illuminate\Support\Facades {
          * Log the given user ID into the application without sessions or cookies.
          *
          * @param mixed $id
-         * @return \App\User|false 
+         * @return \App\Models\Member\User|false 
          * @static 
          */
         public static function onceUsingId($id)
@@ -1646,7 +1646,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $id
          * @param bool $remember
-         * @return \App\User|false 
+         * @return \App\Models\Member\User|false 
          * @static 
          */
         public static function loginUsingId($id, $remember = false)
@@ -1693,7 +1693,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the last user we attempted to authenticate.
          *
-         * @return \App\User 
+         * @return \App\Models\Member\User 
          * @static 
          */
         public static function getLastAttempted()
@@ -1818,7 +1818,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Return the currently cached user.
          *
-         * @return \App\User|null 
+         * @return \App\Models\Member\User|null 
          * @static 
          */
         public static function getUser()
@@ -1864,7 +1864,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if the current user is authenticated.
          *
-         * @return \App\User 
+         * @return \App\Models\Member\User 
          * @throws \Illuminate\Auth\AuthenticationException
          * @static 
          */
@@ -6201,6 +6201,22 @@ namespace Illuminate\Support\Facades {
         public static function setSession($session)
         {
             \Illuminate\Routing\Redirector::setSession($session);
+        }
+        
+    }         
+
+    class Redis {
+        
+        /**
+         * Get a Redis connection by name.
+         *
+         * @param string $name
+         * @return \Illuminate\Redis\Connections\Connection 
+         * @static 
+         */
+        public static function connection($name = null)
+        {
+            return \Illuminate\Redis\RedisManager::connection($name);
         }
         
     }         
@@ -11283,6 +11299,61 @@ namespace Illuminate\Support\Facades {
     }         
 }
     
+namespace Mews\Captcha\Facades {
+
+    class Captcha {
+        
+        /**
+         * Create captcha image
+         *
+         * @param string $config
+         * @return \Mews\Captcha\ImageManager->response 
+         * @static 
+         */
+        public static function create($config = 'default')
+        {
+            return \Mews\Captcha\Captcha::create($config);
+        }
+        
+        /**
+         * Captcha check
+         *
+         * @param $value
+         * @return bool 
+         * @static 
+         */
+        public static function check($value)
+        {
+            return \Mews\Captcha\Captcha::check($value);
+        }
+        
+        /**
+         * Generate captcha image source
+         *
+         * @param null $config
+         * @return string 
+         * @static 
+         */
+        public static function src($config = null)
+        {
+            return \Mews\Captcha\Captcha::src($config);
+        }
+        
+        /**
+         * Generate captcha image html tag
+         *
+         * @param null $config
+         * @return string 
+         * @static 
+         */
+        public static function img($config = null)
+        {
+            return \Mews\Captcha\Captcha::img($config);
+        }
+        
+    }         
+}
+    
     
 namespace {
 
@@ -11329,6 +11400,8 @@ namespace {
     class Queue extends \Illuminate\Support\Facades\Queue {}
     
     class Redirect extends \Illuminate\Support\Facades\Redirect {}
+    
+    class Redis extends \Illuminate\Support\Facades\Redis {}
     
     class Request extends \Illuminate\Support\Facades\Request {}
     
@@ -13284,6 +13357,8 @@ namespace {
             return \Illuminate\Database\Query\Builder::macroCall($method, $parameters);
         }
         }
+    
+    class Captcha extends \Mews\Captcha\Facades\Captcha {}
     
 }
 

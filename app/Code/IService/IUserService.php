@@ -18,4 +18,8 @@ interface IUserService
 
     function LoginWithCredentials($credentials,$isRemember);
 
+    function GetUserByAccountName($account);
+
+    function GetUserByMobile($mobile);
+
 }

@@ -64,6 +64,164 @@ var Auth = function() {
         });
     }
 
+
+    var handleRegister = function() {
+
+        $('#registerForm1').validate({
+            errorElement: 'span', //default input error message container
+            errorClass: 'help-block', // default input error message class
+            focusInvalid: false, // do not focus the last invalid input
+            ignore: "",
+            rules: {
+                accountName: {
+                    required: true,
+                    minlength:6//,
+                    //checkAccount:true
+                },
+                mobile: {
+                    required: true
+                },
+                mobileCode: {
+                    required: true
+                },
+                password: {
+                    required: true,
+                    rangelength:[6,12]
+                },
+                userName: {
+                    required: true
+                },
+                gender: {
+                    required: true
+                },
+                pwdConfirm: {
+                    equalTo: "#password"
+                },
+                verifyCode: {
+                    required: true
+                },
+
+                tnc: {
+                    required: true
+                }
+            },
+
+            messages: { // custom messages for radio buttons and checkboxes
+                accountName: {
+                    required: "请输入会员名。"//.,
+                    //checkAccount:"会员名已存在"
+                },
+                mobile: {
+                    required: "请输入手机号。"
+                },
+                mobileCode: {
+                    required: "请输入短信验证码。"
+                },
+                password: {
+                    required: "请输入密码。",
+                    rangelength:"请输入6-12位的密码"
+                },
+                userName: {
+                    required: "请填写姓名。"
+                },
+                gender: {
+                    required: "请选择性别。"
+                },
+                verifyCode: {
+                    required: "请输入验证码。"
+                },
+                pwdConfirm:{
+                    equalTo:"请填写与密码一致的字符串"
+                }
+            },
+            onfocusout:function(ele){
+              $(ele).valid();
+            },
+
+            invalidHandler: function(event, validator) { //display error alert on form submit
+            },
+
+            highlight: function(element) { // hightlight error inputs
+                $(element)
+                    .closest('.form-group').addClass('has-error'); // set error class to the control group
+            },
+
+            success: function(label) {
+                label.closest('.form-group').removeClass('has-error');
+                label.remove();
+            },
+
+            // errorPlacement: function(error, element) {
+            //     if (element.attr("name") == "tnc") { // insert checkbox errors after the container
+            //         error.insertAfter($('#register_tnc_error'));
+            //     } else if (element.closest('.input-icon').size() === 1) {
+            //         error.insertAfter(element.closest('.input-icon'));
+            //     } else {
+            //         error.insertAfter(element);
+            //     }
+            // },
+
+            submitHandler: function(form) {
+                var result = true;
+                //check AccountName Exist
+                // 设置同步
+                $.ajaxSetup({
+                    async: false
+                });
+                var param = {
+                    _token:$('input[name="_token"]').val(),
+                    accountName: $('input[name="accountName"]').val()
+                };
+                $.post("/verify/checkAccountExist", param, function(data){
+                    result = data;
+                    showError($('input[name="accountName"]')[0],data,"会员名已存在");
+                });
+                // 恢复异步
+                $.ajaxSetup({
+                    async: true
+                });
+
+                if(result)
+                    form[0].submit();
+            }
+        });
+
+        $('#registerForm input').keypress(function(e) {
+            if (e.which == 13) {
+                if ($('#registerForm').validate().form()) {
+                    $('#registerForm').submit();
+                }
+                return false;
+            }
+        });
+
+        // jQuery('#register-btn').click(function() {
+        //     jQuery('.login-form').hide();
+        //     jQuery('.register-form').show();
+        // });
+        //
+        // jQuery('#register-back-btn').click(function() {
+        //     jQuery('.login-form').show();
+        //     jQuery('.register-form').hide();
+        // });
+    }
+
+    var showError = function(obj,result,message){
+        if(result){
+            $(obj).closest('.form-group').removeClass('has-error');
+            $("#verifyCode-error").remove();
+        }
+        else {
+            $(obj).closest('.form-group').addClass('has-error');
+            var error = $("<span>");
+            error.attr("id","verifyCode-error");
+            error.attr("class","help-block");
+            error.text(message);
+            error.insertAfter($(obj));
+
+        }
+    }
+
     var handleForgetPassword = function() {
         $('.forget-form').validate({
             errorElement: 'span', //default input error message container
@@ -97,9 +255,9 @@ var Auth = function() {
                 label.remove();
             },
 
-            errorPlacement: function(error, element) {
-                error.insertAfter(element.closest('.input-icon'));
-            },
+            // errorPlacement: function(error, element) {
+            //     error.insertAfter(element.closest('.input-icon'));
+            // },
 
             submitHandler: function(form) {
                 form.submit();
@@ -127,127 +285,6 @@ var Auth = function() {
 
     }
 
-    var handleRegister = function() {
-
-        function format(state) {
-            if (!state.id) { return state.text; }
-            var $state = $(
-                '<span><img src="../assets/global/img/flags/' + state.element.value.toLowerCase() + '.png" class="img-flag" /> ' + state.text + '</span>'
-            );
-
-            return $state;
-        }
-
-        if (jQuery().select2 && $('#country_list').size() > 0) {
-            $("#country_list").select2({
-                placeholder: '<i class="fa fa-map-marker"></i>&nbsp;Select a Country',
-                templateResult: format,
-                templateSelection: format,
-                width: 'auto',
-                escapeMarkup: function(m) {
-                    return m;
-                }
-            });
-
-
-            $('#country_list').change(function() {
-                $('.register-form').validate().element($(this)); //revalidate the chosen dropdown value and show error or success message for the input
-            });
-        }
-
-        $('.register-form').validate({
-            errorElement: 'span', //default input error message container
-            errorClass: 'help-block', // default input error message class
-            focusInvalid: false, // do not focus the last invalid input
-            ignore: "",
-            rules: {
-
-                fullname: {
-                    required: true
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                address: {
-                    required: true
-                },
-                city: {
-                    required: true
-                },
-                country: {
-                    required: true
-                },
-
-                username: {
-                    required: true
-                },
-                password: {
-                    required: true
-                },
-                rpassword: {
-                    equalTo: "#register_password"
-                },
-
-                tnc: {
-                    required: true
-                }
-            },
-
-            messages: { // custom messages for radio buttons and checkboxes
-                tnc: {
-                    required: "Please accept TNC first."
-                }
-            },
-
-            invalidHandler: function(event, validator) { //display error alert on form submit
-
-            },
-
-            highlight: function(element) { // hightlight error inputs
-                $(element)
-                    .closest('.form-group').addClass('has-error'); // set error class to the control group
-            },
-
-            success: function(label) {
-                label.closest('.form-group').removeClass('has-error');
-                label.remove();
-            },
-
-            errorPlacement: function(error, element) {
-                if (element.attr("name") == "tnc") { // insert checkbox errors after the container
-                    error.insertAfter($('#register_tnc_error'));
-                } else if (element.closest('.input-icon').size() === 1) {
-                    error.insertAfter(element.closest('.input-icon'));
-                } else {
-                    error.insertAfter(element);
-                }
-            },
-
-            submitHandler: function(form) {
-                form[0].submit();
-            }
-        });
-
-        $('.register-form input').keypress(function(e) {
-            if (e.which == 13) {
-                if ($('.register-form').validate().form()) {
-                    $('.register-form').submit();
-                }
-                return false;
-            }
-        });
-
-        jQuery('#register-btn').click(function() {
-            jQuery('.login-form').hide();
-            jQuery('.register-form').show();
-        });
-
-        jQuery('#register-back-btn').click(function() {
-            jQuery('.login-form').show();
-            jQuery('.register-form').hide();
-        });
-    }
 
     return {
         //main function to initiate the module

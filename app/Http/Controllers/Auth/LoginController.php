@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Code\Common\FromAdminOperate;
-use App\Code\Common\LoginAgent;
-use App\Code\Common\LoginTypeEnum;
+use App\Code\Common\FromAdminOperateEnum;
+use App\Code\Common\LoginAgentEnum;
+use App\Code\Common\LoginModeEnum;
 use App\Code\IService\ILoginLogService;
 use App\Http\Controllers\WebController;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class LoginController extends WebController
 {
@@ -41,6 +42,10 @@ class LoginController extends WebController
     public function __construct(ILoginLogService $logService)
     {
         $this->middleware('redirectLogin', ['except' => 'logout']);
+
+//        $v = Redis::get('mobileNum');
+//        $t = $v;
+
 //        $v = bcrypt("123456");
        // $t=$v;
 
@@ -67,7 +72,7 @@ class LoginController extends WebController
 
         if ($this->attemptLogin($request)) {
             //登录成功，进行登录日志记录
-            $this->TriggerLoginLog(LoginTypeEnum::Mobile,LoginAgent::PC,FromAdminOperate::FromUser,$request->ip());
+            $this->TriggerLoginLog(LoginModeEnum::Mobile,LoginAgentEnum::PC,FromAdminOperateEnum::FromUser,$request->ip());
 
 
             //返回响应

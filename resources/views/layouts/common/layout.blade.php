@@ -12,13 +12,19 @@
     <link rel="stylesheet" type="text/css" href="../../../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../../../css/common.css">
     <link rel="stylesheet" type="text/css" href="../../../css/publicCommon.css">
+
+
     @yield("pageCss")
 
 
 </head>
 <body>
 {{--header--}}
-@include('layouts.auth.header')
+@include('layouts.common.commonTop')
+
+@include('layouts.common.header')
+
+@include('layouts.common.navigationIndex')
 
 {{--content--}}
 
@@ -30,7 +36,7 @@
 <script type="text/javascript" src="../../../../js/jquery-validation/js/additional-methods.js"></script>
 <script type="text/javascript" src="../../../../js/layer3.0.3/layer.js"></script>
 
-@include('layouts.auth.footer')
+@include('layouts.common.footer')
 
 @yield("pageScripts")
 </body>
