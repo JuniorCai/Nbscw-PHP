@@ -89,7 +89,6 @@ class LoginController extends WebController
 
     public function username()
     {
-
         return 'mobile';
     }
 }

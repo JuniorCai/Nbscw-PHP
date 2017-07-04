@@ -71,4 +71,14 @@ class SellRepository
     {
         return $model->save();
     }
+
+    function GetSellsByFilter($filterArray)
+    {
+        if($filterArray==null || count($filterArray)==0)
+        {
+            return Sell::all();
+        }
+        return Sell::where($filterArray)->get();
+    }
+
 }

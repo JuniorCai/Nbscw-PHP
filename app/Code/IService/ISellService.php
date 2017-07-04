@@ -23,4 +23,6 @@ interface ISellService
 
     function updateSellInfo(Sell $model);
 
+    function GetSellsByFilter($filterArray);
+
 }

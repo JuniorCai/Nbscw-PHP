@@ -27,6 +27,17 @@ class WebController extends Controller
         $userInfo->id = $this->GetLoginUserInfo()->id;
         $userInfo->mobile = $this->GetLoginUserInfo()->mobile;
         event(new LoginLogEvent($userInfo,$ip,$loginType,$loginAgent,$isFromAdmin,Carbon::now()));
+    }
 
+    function CheckStaticPageExist($pageName)
+    {
+        if(!strpos($pageName,"shtml"))
+            $pageName.=".shtml";
+
+        if(is_file($pageName)&& (time() - filemtime($pageName)) < 300)
+        {
+            return true;
+        }
+        return false;
     }
 }

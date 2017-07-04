@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSells extends Migration
+class CreateProductBuys extends Migration
 {
     /**
      * Run the migrations.

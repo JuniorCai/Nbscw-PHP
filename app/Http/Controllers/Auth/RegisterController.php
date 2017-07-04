@@ -117,7 +117,7 @@ class RegisterController extends WebController
         $userModel->nickName = $data['accountName'];
         $userModel->mobile = $data['mobile'];
         $userModel->password = bcrypt($data['password']);
-        $userModel->payPassword = bcrypt($data['password']);
+        $userModel->payPassword = $userModel->password;
         $userModel->userName = $data['userName'];
         $userModel->gender = $data['gender'];
         $userModel->userGroup = UserGroupEnum::MemberUser;

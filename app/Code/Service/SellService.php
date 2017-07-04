@@ -53,5 +53,16 @@ class SellService implements ISellService
         return $this->Repository->updateSellInfo($model);
     }
 
+    function GetSellsByFilter($filterArray=null)
+    {
+        $list = $this->Repository->GetSellsByFilter($filterArray);
+        if(count($list)>0)
+        {
+            return $list;
+        }
+        return null;
+    }
+
+
 
 }
