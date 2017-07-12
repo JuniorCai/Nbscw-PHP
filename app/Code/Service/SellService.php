@@ -38,14 +38,14 @@ class SellService implements ISellService
         return $this->Repository->GetSellById($id);
     }
 
-    function GetSellsByUserId($userId)
+    function GetSellsByUserId($userId,$orderFiled="id",$isAsc=true)
     {
-        return $this->Repository->GetSellsByUserId($userId);
+        return $this->Repository->GetSellsByUserId($userId,$orderFiled,$isAsc);
     }
 
-    function GetSellsByCompanyId($companyId)
+    function GetSellsByCompanyId($companyId,$orderFiled="id",$isAsc=true)
     {
-        return $this->Repository->GetSellsByCompanyId($companyId);
+        return $this->Repository->GetSellsByCompanyId($companyId,$orderFiled,$isAsc);
     }
 
     function updateSellInfo(Sell $model)
@@ -53,15 +53,21 @@ class SellService implements ISellService
         return $this->Repository->updateSellInfo($model);
     }
 
-    function GetSellsByFilter($filterArray=null)
+    function GetSellsByFilterFromCache($filterArray=null,$orderFiled="id",$isAsc=true)
     {
-        $list = $this->Repository->GetSellsByFilter($filterArray);
-        if(count($list)>0)
-        {
+        $list = $this->Repository->GetSellsFromCache();
+        $list = $isAsc?$list->sortBy($orderFiled):$list->sortByDesc($orderFiled);
+        if ($filterArray == null || count($filterArray) == 0) {
             return $list;
         }
-        return null;
+        return $list->where($filterArray);
     }
+
+    function UpdateSellCache()
+    {
+        return $this->Repository->UpdateSellCache();
+    }
+
 
 
 

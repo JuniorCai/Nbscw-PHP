@@ -164,7 +164,7 @@
 
     float: left;
     width:210px;
-    line-height: 44px;
+    line-height: 42px;
     text-align: center;
     text-decoration:none;
     background-color: #F3B827;
@@ -175,6 +175,10 @@
 .nav-layout .allCategory > a:hover{
     background-color: #FFA600;
 }
+.nav-layout .allCategory > a:visited{
+    text-decoration:none;
+}
+
 
 
 /*弹出分类栏*/
@@ -192,8 +196,8 @@
 /*非首页公告页弹出分页栏*/
 .categoryList{
     position: absolute;
-    left: 0px;
-    top: 44px;
+    left: 0;
+    top: 42px;
     height: 425px;
     width: 210px;
     background-color: #ffffff;
@@ -244,7 +248,8 @@
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus,
-.nav-pills > li > a:hover
+.nav-pills > li > a:hover,
+.nav-pills > li > a:visited
 {
     background-color: #3088D2;
 
@@ -253,12 +258,13 @@
 .nav-pills > li > a,
 .nav-pills > li > a:hover,
 .nav-pills > li > a:focus,
-.nav-pills > li > a
+.nav-pills > li > a:visited
 {
     color: #ffffff;
     font-size: 16px;
     font-family: "Microsoft YaHei";
-    border-radius: 0px;
+    border-radius: 0;
+
 }
 /*覆盖原有导航部分样式 End*/
 
@@ -401,7 +407,13 @@
 
 
 .pagerContainer{
-    float:right;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.pagination > li > a, .pagination > li > span{
+    float: none;
+    padding: 8px 14px;
 }
 
 .pagination a{
@@ -423,36 +435,39 @@
 
 /*产品搜索页列表样式*/
 
-.productResultsList .container,.productResultsList .container .col-md-3{
-    padding:0 10px;
+.productResultsList .container{
+    padding: 0
 }
 
-.productResultsList .row{
-    margin-bottom: 10px;
+.productResultsList .container .col-md-3{
+    margin:0 ;
+    padding:0;
+    width:220px;
+    height: 100%;
 }
 
+/*.productResultsList .row{*/
+    /*width:100%;*/
+    /*margin:0 0 10px 0;*/
+/*}*/
 
 
-.productResultsList .row .proInfo{
-    border-left: solid 1px #e6e6e6;
-    border-right: solid 1px #e6e6e6;
-    border-bottom: solid 1px #e6e6e6;
-}
 
-.productResultsList .row .proInfo> p{
+
+.productResultsList .container .proInfo> p{
     padding: 5px 8px;
 }
 
-.productResultsList .row .proInfo  > p > a{
+.productResultsList .container .proInfo  > p > a{
     display: block;
     height: 24px;
-    font-size: 14px;
+    font-size: 16px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.productResultsList .row .priceShow{
+.productResultsList  .priceShow{
     font-size: 16px;
     color: #F3B827;
 }

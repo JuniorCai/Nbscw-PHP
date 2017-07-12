@@ -15,4 +15,6 @@ class Buy extends Model
 
     protected $table = "productBuys";
 
+    protected $dates = ["deleted_at"];
+
 }

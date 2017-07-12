@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 use App\Events\LoginLogEvent;
 use App\Models\Member\User;
 use Carbon\Carbon;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class WebController extends Controller
 {
@@ -40,4 +41,12 @@ class WebController extends Controller
         }
         return false;
     }
+
+    protected function GeneratePager($totalList,$pageIndex,$perPage,$pagePath)
+    {
+        $pageList = $totalList->forPage($pageIndex,$perPage);
+        $lengthAwarePaginator = new LengthAwarePaginator($pageList,$totalList->count(),$perPage,$pageIndex,["pageName"=>"page","path"=>$pagePath]);
+        return $lengthAwarePaginator;
+    }
+
 }

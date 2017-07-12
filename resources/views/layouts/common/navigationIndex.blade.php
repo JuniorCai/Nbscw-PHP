@@ -1,28 +1,9 @@
-<!--导航栏-->
-{{--<div class="nav-layout w100">--}}
-    {{--<div class="navContainer containerCenter">--}}
-        {{--<div class="allCategory">--}}
-            {{--<a href="#">产品分类</a>--}}
-        {{--</div>--}}
-
-        {{--<ul class="nav nav-pills nav-justified">--}}
-            {{--<li class="active"><a href="Index.html">首页</a></li>--}}
-            {{--<li><a href="productsSearch.html">供应</a></li>--}}
-            {{--<li><a href="productsPurchase.html">求购</a></li>--}}
-            {{--<li><a href="companySearch.html">商家</a></li>--}}
-            {{--<li><a href="#">资讯</a></li>--}}
-        {{--</ul>--}}
-
-    {{--</div>--}}
-{{--</div>--}}
-
-
 <div class="nav-layout w100">
     <div class="navContainer containerCenter">
         <ul class="nav nav-pills nav-justified">
             <div class="allCategory">
                 <a href="#">产品分类</a>
-                <ul class="categoryList">
+                <ul class="categoryList" style="{{$pageName!="index"?'display: none':''}}">
                     <li>
                         <a href="#"><p class="bigCategory" title="大理石">大理石</p></a>
                         <p class="smallCategory">
@@ -72,11 +53,11 @@
                     </li>
                 </ul>
             </div>
-            <li class="active"><a href="Index.html">首页</a></li>
-            <li><a href="productsSearch.html">供应</a></li>
-            <li><a href="productsPurchase.html">求购</a></li>
-            <li><a href="companySearch.html">商家</a></li>
-            <li><a href="#">资讯</a></li>
+            <li class="{{$pageName=="index"?'active':''}}"><a href="/">首页</a></li>
+            <li class="{{$pageName=="sell"?'active':''}}"><a href="/sell">供应</a></li>
+            <li class="{{$pageName=="buy"?'active':''}}"><a href="productsPurchase.html">求购</a></li>
+            <li class="{{$pageName=="company"?'active':''}}"><a href="companySearch.html">商家</a></li>
+            <li class="{{$pageName=="news"?'active':''}}"><a href="#">资讯</a></li>
         </ul>
 
     </div>

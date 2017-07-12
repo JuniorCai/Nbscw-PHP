@@ -5,8 +5,8 @@ address, cite, dfn, em, var { font-style:normal; }
 code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
 small{ font-size:12px; }
 ul, ol { list-style:none; }
-a {color: #333; text-decoration:none; outline: none}
-a:hover { color: #ff7800; text-decoration:underline; outline: none }
+a {color: #333; text-decoration:none; outline: none;cursor: pointer}
+a:hover { color: #ff7800; text-decoration:none; outline: none }
 sup { vertical-align:text-top; }
 sub{ vertical-align:text-bottom; }
 legend { color:#000; }

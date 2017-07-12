@@ -34,4 +34,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/verify/checkMobileExist','auth\VerifyController@checkMobileExist');
 
 
+
+    //公共页面
+    Route::get('/sell/search/','common\sellController@search');
+    Route::get('/sell/','common\sellController@search');
+
+
 });

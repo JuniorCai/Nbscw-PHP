@@ -11,5 +11,8 @@ class LoginLog extends Model
     use SoftDeletes;
 
     protected $table = "loginLogs";
+
+    protected $dates = ["deleted_at"];
+
     //
 }

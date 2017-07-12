@@ -236,7 +236,12 @@
 
 .productList > li{
     line-height: 30px;
+    height: 30px;
     text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    /*width: 100px;*/
 }
 
 

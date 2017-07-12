@@ -13,6 +13,9 @@ class userVerify extends Model
 
     protected $table = "userVerifys";
     protected $fillable = ["typeId","verifyCode","mobile","email","ip","status"];
+
+    protected $dates = ["deleted_at"];
+
 }
 //验证码状态
 class verifyCodeStatusEnum

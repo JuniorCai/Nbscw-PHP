@@ -53,8 +53,8 @@ class SellCategoryRepository
         {
             return $list;
         }
-        $newList = SellCategory::all();
-        Cache::add("SellCategory",$newList,60);
+        $newList = SellCategory::get();
+        Cache::put("SellCategory",$newList,60);
         return $newList;
     }
 
@@ -74,8 +74,8 @@ class SellCategoryRepository
     {
         try
         {
-            $newList = SellCategory::all();
-            Redis::set("SellCategory",$newList);
+            $newList = SellCategory::get();
+            Redis::put("SellCategory",$newList);
             return true;
         }catch (\Exception $e)
         {

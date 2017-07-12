@@ -14,5 +14,16 @@ class SellCategory extends Model
     use SoftDeletes;
 
     protected $table = "sellCategory";
+    protected $dates = ["deleted_at"];
 
+
+    public function childrenCategories()
+    {
+        return $this->hasMany('App\Models\Member\SellCategory','parentId');
+    }
+
+    public function parentCategory()
+    {
+        return $this->belongsTo('App\Models\Member\SellCategory','parentId');
+    }
 }

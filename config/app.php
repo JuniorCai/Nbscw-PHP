@@ -253,4 +253,12 @@ return [
         'State' => 'OFF'
     ],
 
+    'WebCachePeriod' => [
+        'Sell' => 30
+    ],
+
+    'WebPageSize' => [
+        'SellPageSize' => "48"
+]
+
 ];

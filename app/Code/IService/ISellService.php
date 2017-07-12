@@ -19,10 +19,12 @@ interface ISellService
 
     function GetSellsByUserId($userId);
 
-    function GetSellsByCompanyId($companyId);
+    function GetSellsByCompanyId($companyId,$orderFiled="id",$isAsc=true);
 
     function updateSellInfo(Sell $model);
 
-    function GetSellsByFilter($filterArray);
+    function GetSellsByFilterFromCache($filterArray,$orderFiled,$isAsc);
+
+    function UpdateSellCache();
 
 }

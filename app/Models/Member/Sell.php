@@ -15,4 +15,22 @@ class Sell extends Model
 
     protected $table = "productSells";
 
+    protected $dates = ["deleted_at"];
+
+}
+
+class PriceTypeEnum
+{
+    /**
+     * 面议
+     */
+    const Negotiable = 0;
+    /**
+     * 一口价
+     */
+    const Fixed = 1;
+    /**
+     * 区间价
+     */
+    const Range = 2;
 }

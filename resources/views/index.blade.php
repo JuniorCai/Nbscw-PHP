@@ -195,26 +195,13 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <ul class="productList" style="overflow-y: hidden; ">
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石1</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石2</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石3</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石4</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石5</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石6</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石7</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石8</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石9</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石10</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石11</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石12</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石13</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石14</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石15</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石16</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石17</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石18</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石19</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石20</a></li>
+                                    @for($i = 0;$i < count($firstFloorSell);$i++)
+                                        @if($i<count($firstFloorSell)/2)
+                                            <li class="pro-item" style=""><a href="#">{{$firstFloorSell[$i]->title}}</a></li>
+                                        @else
+                                            <li class="pro-item" style="display: none;"><a href="#">{{$firstFloorSell[$i]->title}}</a></li>
+                                        @endif
+                                    @endfor
                                 </ul>
                             </div>
                         </div>
@@ -356,26 +343,14 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <ul class="productList" style="overflow-y: hidden; ">
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石1</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石2</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石3</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石4</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石5</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石6</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石7</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石8</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石9</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石10</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石11</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石12</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石13</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石14</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石15</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石16</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石17</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石18</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石19</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石20</a></li>
+                                    @for($i = 0;$i<count($secondFloorSell);$i++)
+                                        @if($i<count($secondFloorSell)/2)
+                                            <li class="pro-item" style=""><a href="#">{{$secondFloorSell[$i]->title}}</a></li>
+                                        @else
+                                            <li class="pro-item" style="display: none;"><a href="#">{{$secondFloorSell[$i]->title}}</a></li>
+                                        @endif
+                                    @endfor
+
                                 </ul>
                             </div>
                         </div>
@@ -780,26 +755,13 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <ul class="productList" style="overflow-y: hidden; ">
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石1</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石2</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石3</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石4</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石5</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石6</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石7</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石8</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石9</a></li>
-                                    <li class="pro-item" style=""><a href="#">欣欣石材   芝麻黑大理石10</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石11</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石12</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石13</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石14</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石15</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石16</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石17</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石18</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石19</a></li>
-                                    <li class="pro-item" style="display: none;"><a href="#">欣欣石材   芝麻黑大理石20</a></li>
+                                    @for($i = 0;$i<count($thirdFloorSell);$i++)
+                                        @if($i<count($thirdFloorSell)/2)
+                                            <li class="pro-item" style=""><a href="#">{{$thirdFloorSell[$i]->title}}</a></li>
+                                        @else
+                                            <li class="pro-item" style="display: none;"><a href="#">{{$thirdFloorSell[$i]->title}}</a></li>
+                                        @endif
+                                    @endfor
                                 </ul>
                             </div>
                         </div>

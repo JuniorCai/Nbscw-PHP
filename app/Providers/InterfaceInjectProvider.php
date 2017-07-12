@@ -28,5 +28,6 @@ class InterfaceInjectProvider extends ServiceProvider
         $this->app->bind('App\Code\IService\ILoginLogService','App\Code\Service\LoginLogService');
         $this->app->bind('App\Code\IService\IVerifyCodeService','App\Code\Service\VerifyCodeService');
         $this->app->bind('App\Code\IService\ISellCategoryService','App\Code\Service\SellCategoryService');
+        $this->app->bind('App\Code\IService\ISellService','App\Code\Service\SellService');
     }
 }
